@@ -1,0 +1,1577 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="-">阿里百秀</h1>
+<p>基础URL：<a href="http://localhost:3000">http://localhost:3000</a></p>
+<h2 id="1-">1. 用户管理</h2>
+<h3 id="1-1-">1.1 创建用户</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/users</td>
+<td>POST</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nickName</td>
+<td>是</td>
+<td>用户昵称</td>
+</tr>
+<tr>
+<td>email</td>
+<td>是</td>
+<td>邮件地址</td>
+</tr>
+<tr>
+<td>password</td>
+<td>是</td>
+<td>登录密码</td>
+</tr>
+<tr>
+<td>role</td>
+<td>是</td>
+<td>角色  [admin 超级管理员]  [normal 普通用户]</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>否</td>
+<td>头像</td>
+</tr>
+<tr>
+<td>status</td>
+<td>是</td>
+<td>状态  [0 未激活] [1 激活]</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;_id&quot;: &quot;5c8d0bd652ae3d26686b8601&quot;, // 用户id
+    &quot;email&quot;: &quot;coder@itcast.cn&quot;,        // 邮箱地址
+    &quot;nickName&quot;: &quot;coder&quot;,               // 昵称
+    &quot;role&quot;: &quot;admin&quot;,                   // 角色
+    &quot;avatar&quot;: null,                    // 头像
+    &quot;createTime&quot;: &quot;2019-03-16T14:44:38.896Z&quot;, // 创建时间
+    &quot;status&quot;: 1                        // 状态
+}
+</code></pre>
+<h3 id="1-2-">1.2 用户登录</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/login</td>
+<td>POST</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td>是</td>
+<td>邮箱地址</td>
+</tr>
+<tr>
+<td>password</td>
+<td>是</td>
+<td>登录密码</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;nickName&quot;: &quot;coder&quot;,
+    &quot;email&quot;: &quot;coder@itcast.cn&quot;,
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;avatar&quot;: null,
+    &quot;_id&quot;: &quot;5c8d0bd652ae3d26686b8601&quot;,
+    &quot;status&quot;: 1,
+    &quot;createTime&quot;: &quot;2019-03-16T14:44:38.896Z&quot;
+}
+</code></pre>
+<h3 id="1-3-">1.3 退出登录</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/logout</td>
+<td>POST</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;message&quot;: &quot;退出成功&quot;
+}
+</code></pre>
+<h3 id="1-4-">1.4 操作用户</h3>
+<h4 id="1-4-1-">1.4.1 获取用户登录状态</h4>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/login/status</td>
+<td>GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">var isLogin = true;
+var userId = &quot;5c8d0bd652ae3d26686b8601&quot;;
+</code></pre>
+<h4 id="1-4-2-">1.4.2 获取用户列表</h4>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/users</td>
+<td>GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">[
+    {
+        &quot;role&quot;: &quot;admin&quot;,
+        &quot;avatar&quot;: null,
+        &quot;status&quot;: 1,
+        &quot;_id&quot;: &quot;5c8d0bd652ae3d26686b8601&quot;,
+        &quot;nickName&quot;: &quot;coder&quot;,
+        &quot;email&quot;: &quot;coder@itcast.cn&quot;,
+        &quot;createTime&quot;: &quot;2019-03-16T14:44:38.896Z&quot;
+    }
+]
+</code></pre>
+<h4 id="1-4-3-id-">1.4.3 根据 id 查询用户</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/users/:id</td>
+<td style="text-align:center">GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;avatar&quot;: null,
+    &quot;status&quot;: 1,
+    &quot;_id&quot;: &quot;5c8d17530306b9157040e03a&quot;,
+    &quot;nickName&quot;: &quot;coder123&quot;,
+    &quot;email&quot;: &quot;coder@itcast.cn&quot;,
+    &quot;createTime&quot;: &quot;2019-03-16T15:33:39.785Z&quot;
+}
+</code></pre>
+<h4 id="1-4-4-id-">1.4.4 根据 id 修改用户</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/users/:id</td>
+<td style="text-align:center">PUT</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名称</th>
+<th style="text-align:center">是否必选</th>
+<th style="text-align:center">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">nickName</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">用户昵称</td>
+</tr>
+<tr>
+<td style="text-align:center">status</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">用户状态</td>
+</tr>
+<tr>
+<td style="text-align:center">role</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">用户角色</td>
+</tr>
+<tr>
+<td style="text-align:center">avatar</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">用户头像</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;avatar&quot;: null,
+    &quot;status&quot;: 1,
+    &quot;_id&quot;: &quot;5c8d17530306b9157040e03a&quot;,
+    &quot;nickName&quot;: &quot;coder123&quot;,
+    &quot;email&quot;: &quot;coder@itcast.cn&quot;,
+    &quot;createTime&quot;: &quot;2019-03-16T15:33:39.785Z&quot;
+}
+</code></pre>
+<h4 id="1-4-5-id-">1.4.5 根据 id 删除用户</h4>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/users/:id</td>
+<td>DELETE</td>
+<td>批量删除，多个id用-隔开，例如：/users/:id-id-id</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;role&quot;: &quot;admin&quot;,
+    &quot;avatar&quot;: null,
+    &quot;status&quot;: 1,
+    &quot;_id&quot;: &quot;5c8d0bd652ae3d26686b8601&quot;,
+    &quot;nickName&quot;: &quot;coder&quot;,
+    &quot;password&quot;: &quot;$2b$10$M22/fYGmCkK7baXsfA0ZZur3RuatZEDXkujfvZ1j1T73HDdDBwXIG&quot;,
+    &quot;email&quot;: &quot;coder@itcast.cn&quot;,
+    &quot;createTime&quot;: &quot;2019-03-16T14:44:38.896Z&quot;
+}
+</code></pre>
+<pre><code class="lang-json">[
+    {
+        &quot;role&quot;: &quot;admin&quot;,
+        &quot;avatar&quot;: null,
+        &quot;status&quot;: 1,
+        &quot;_id&quot;: &quot;5c8d17530306b9157040e03a&quot;,
+        &quot;nickName&quot;: &quot;coder123&quot;,
+        &quot;email&quot;: &quot;coder@itcast.cn&quot;,
+        &quot;password&quot;: &quot;$2b$10$doXV67Nn1kxsgCjoY/BBd.6kUfta7GJvcYZG6c/kdLly1GlK0ZUa2&quot;,
+        &quot;createTime&quot;: &quot;2019-03-16T15:33:39.785Z&quot;
+    }
+]
+</code></pre>
+<h4 id="1-4-6-">1.4.6 修改用户密码</h4>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/users/password</td>
+<td>PUT</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userPass</td>
+<td>是</td>
+<td>原密码</td>
+</tr>
+<tr>
+<td>newPass</td>
+<td>是</td>
+<td>新密码</td>
+</tr>
+<tr>
+<td>confirmPass</td>
+<td>是</td>
+<td>确认密码</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    message: &#39;密码修改成功&#39;
+}
+</code></pre>
+<h2 id="2-">2. 分类管理</h2>
+<h3 id="2-1-">2.1 添加分类</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/categories</td>
+<td>POST</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>是</td>
+<td>分类名称</td>
+</tr>
+<tr>
+<td>className</td>
+<td>是</td>
+<td>分类图标类名</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;className&quot;: &quot;fa-glass&quot;,
+    &quot;_id&quot;: &quot;5c8dbc2ded67612f8837e0db&quot;,
+    &quot;title&quot;: &quot;奇趣事&quot;,
+    &quot;createAt&quot;: &quot;2019-03-17T03:17:01.733Z&quot;
+}
+</code></pre>
+<h3 id="2-2-">2.2 查询分类</h3>
+<h4 id="2-2-1-id-">2.2.1 根据 id 查询分类</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/categories/:id</td>
+<td style="text-align:center">GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;className&quot;: &quot;fa-glass&quot;,
+    &quot;_id&quot;: &quot;5c8dbd8f67d2a02ea076555e&quot;,
+    &quot;title&quot;: &quot;奇趣事100&quot;,
+    &quot;createAt&quot;: &quot;2019-03-17T03:22:55.066Z&quot;
+}
+</code></pre>
+<h4 id="2-2-2-">2.2.2 查询分类列表</h4>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/categories</td>
+<td>GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">[
+    {
+        &quot;className&quot;: &quot;fa-glass&quot;,
+        &quot;_id&quot;: &quot;5c8dbc2ded67612f8837e0db&quot;,
+        &quot;title&quot;: &quot;奇趣事&quot;,
+        &quot;createAt&quot;: &quot;2019-03-17T03:17:01.733Z&quot;
+    },
+    {
+        &quot;className&quot;: &quot;fa-glass&quot;,
+        &quot;_id&quot;: &quot;5c8dbd8f67d2a02ea076555e&quot;,
+        &quot;title&quot;: &quot;奇趣事4&quot;,
+        &quot;createAt&quot;: &quot;2019-03-17T03:22:55.066Z&quot;
+    }
+]
+</code></pre>
+<h4 id="2-2-3-">2.2.3 查询分类数量</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/categories/count</td>
+<td style="text-align:center">GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;categoryCount&quot;: 2
+}
+</code></pre>
+<h3 id="2-5-id-">2.5 根据 id 修改分类</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/categories/:id</td>
+<td style="text-align:center">PUT</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名称</th>
+<th style="text-align:center">是否必选</th>
+<th style="text-align:center">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">title</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">分类名称</td>
+</tr>
+<tr>
+<td style="text-align:center">className</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">分类图标类名</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;className&quot;: &quot;fa-glass&quot;,
+    &quot;_id&quot;: &quot;5c8dbd8f67d2a02ea076555e&quot;,
+    &quot;title&quot;: &quot;奇趣事100&quot;,
+    &quot;createAt&quot;: &quot;2019-03-17T03:22:55.066Z&quot;
+}
+</code></pre>
+<h3 id="2-6-id-">2.6 根据 id 删除分类</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/categories/:id</td>
+<td style="text-align:center">DELETE</td>
+<td style="text-align:center">批量删除，多个id用-隔开，例如：/categories/:id-id-id</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;className&quot;: &quot;fa-glass&quot;,
+    &quot;_id&quot;: &quot;5c8dbd8667d2a02ea076555b&quot;,
+    &quot;title&quot;: &quot;奇趣事1&quot;,
+    &quot;createAt&quot;: &quot;2019-03-17T03:22:46.456Z&quot;
+}
+</code></pre>
+<pre><code class="lang-json">[
+    {
+        &quot;className&quot;: &quot;fa-glass&quot;,
+        &quot;_id&quot;: &quot;5c8dbd8867d2a02ea076555c&quot;,
+        &quot;title&quot;: &quot;奇趣事2&quot;,
+        &quot;createAt&quot;: &quot;2019-03-17T03:22:48.369Z&quot;
+    }
+]
+</code></pre>
+<h2 id="3-">3. 文章管理</h2>
+<h3 id="3-1-">3.1 创建文章</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/posts</td>
+<td>POST</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>是</td>
+<td>文章标题</td>
+</tr>
+<tr>
+<td>state</td>
+<td>是</td>
+<td>文章状态 [0 草稿] [1 发布]</td>
+</tr>
+<tr>
+<td>content</td>
+<td>是</td>
+<td>文章内容</td>
+</tr>
+<tr>
+<td>category</td>
+<td>是</td>
+<td>文章所属分类</td>
+</tr>
+<tr>
+<td>thumbnail</td>
+<td>否</td>
+<td>文章缩略图</td>
+</tr>
+<tr>
+<td>createAt</td>
+<td>是</td>
+<td>文章发布时间</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;meta&quot;: {
+        &quot;views&quot;: 0,
+        &quot;likes&quot;: 0,
+        &quot;comments&quot;: 0
+    },
+    &quot;state&quot;: 1,
+    &quot;content&quot;: &quot;测试内容&quot;,
+    &quot;thumbnail&quot;: null,
+    &quot;_id&quot;: &quot;5c8dcd3a2346ad087cf957bf&quot;,
+    &quot;title&quot;: &quot;测试文章&quot;,
+    &quot;category&quot;: &quot;5c8dbc2ded67612f8837e0db&quot;,
+    &quot;author&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+    &quot;createAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;,
+    &quot;updateAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;
+}
+</code></pre>
+<h3 id="3-2-">3.2 查询文章</h3>
+<h4 id="3-2-1-id-">3.2.1 根据 id 获取文章</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/posts/:id</td>
+<td style="text-align:center">GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;meta&quot;: {
+        &quot;views&quot;: 0,
+        &quot;likes&quot;: 0,
+        &quot;comments&quot;: 0
+    },
+    &quot;state&quot;: 1,
+    &quot;content&quot;: &quot;测试内容&quot;,
+    &quot;thumbnail&quot;: null,
+    &quot;_id&quot;: &quot;5c8dcf3a5fcbf1100c276648&quot;,
+    &quot;title&quot;: &quot;测试文章&quot;,
+    &quot;category&quot;: &quot;5c8dbc2ded67612f8837e0db&quot;,
+    &quot;author&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+    &quot;createAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;,
+    &quot;updateAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;
+}
+</code></pre>
+<h4 id="3-2-2-">3.2.2 查询文章列表</h4>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/posts</td>
+<td>GET</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>category</td>
+<td>否</td>
+<td>文章所属分类</td>
+</tr>
+<tr>
+<td>state</td>
+<td>否</td>
+<td>文章状态 [0 草稿] [1 发布]</td>
+</tr>
+<tr>
+<td>page</td>
+<td>否</td>
+<td>文章页码</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;page&quot;: 1,
+    &quot;size&quot;: 10,
+    &quot;total&quot;: 4,
+    &quot;records&quot;: [
+        {
+            &quot;state&quot;: 1,
+            &quot;thumbnail&quot;: null,
+            &quot;_id&quot;: &quot;5c8dcf3a5fcbf1100c276648&quot;,
+            &quot;title&quot;: &quot;测试文章&quot;,
+            &quot;category&quot;: {
+                &quot;className&quot;: &quot;fa-glass&quot;,
+                &quot;_id&quot;: &quot;5c8dbc2ded67612f8837e0db&quot;,
+                &quot;title&quot;: &quot;奇趣事&quot;,
+                &quot;createAt&quot;: &quot;2019-03-17T03:17:01.733Z&quot;
+            },
+            &quot;author&quot;: {
+                &quot;role&quot;: &quot;admin&quot;,
+                &quot;avatar&quot;: null,
+                &quot;status&quot;: 1,
+                &quot;_id&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+                &quot;nickName&quot;: &quot;coder&quot;,
+                &quot;email&quot;: &quot;coder@itcast.cn&quot;,
+                &quot;createTime&quot;: &quot;2019-03-17T04:28:55.780Z&quot;
+            },
+            &quot;createAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;,
+            &quot;updateAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;
+        }
+    ],
+    &quot;pages&quot;: 1,
+    &quot;display&quot;: [
+        1
+    ]
+}
+</code></pre>
+<h4 id="3-2-3-">3.2.3 根据分类获取文章列表</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/posts/category/:id</td>
+<td style="text-align:center">GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">[
+    {
+        &quot;meta&quot;: {
+            &quot;views&quot;: 0,
+            &quot;likes&quot;: 0,
+            &quot;comments&quot;: 0
+        },
+        &quot;state&quot;: 1,
+        &quot;content&quot;: &quot;测试内容&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;_id&quot;: &quot;5c8dcf3a5fcbf1100c276648&quot;,
+        &quot;title&quot;: &quot;是单独发顺丰&quot;,
+        &quot;category&quot;: &quot;5c8dbc2ded67612f8837e0db&quot;,
+        &quot;author&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+        &quot;createAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;,
+        &quot;updateAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;
+    }
+]
+</code></pre>
+<h4 id="3-2-4-">3.2.4 查询文章数量</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/posts/count</td>
+<td style="text-align:center">GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;postCount&quot;: 4,
+    &quot;draftCount&quot;: 0
+}
+</code></pre>
+<h4 id="3-2-5-">3.2.5 获取最新发布文章</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/posts/lasted</td>
+<td style="text-align:center">GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">[
+    {
+        &quot;state&quot;: 1,
+        &quot;thumbnail&quot;: null,
+        &quot;_id&quot;: &quot;5c8dcf415fcbf1100c27664b&quot;,
+        &quot;title&quot;: &quot;测试文章&quot;,
+        &quot;category&quot;: {
+            &quot;className&quot;: &quot;fa-glass&quot;,
+            &quot;_id&quot;: &quot;5c8dbc2ded67612f8837e0db&quot;,
+            &quot;title&quot;: &quot;奇趣事&quot;,
+            &quot;createAt&quot;: &quot;2019-03-17T03:17:01.733Z&quot;
+        },
+        &quot;author&quot;: {
+            &quot;role&quot;: &quot;admin&quot;,
+            &quot;avatar&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;_id&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+            &quot;nickName&quot;: &quot;coder&quot;,
+            &quot;email&quot;: &quot;coder@itcast.cn&quot;,
+            &quot;createTime&quot;: &quot;2019-03-17T04:28:55.780Z&quot;
+        },
+        &quot;createAt&quot;: &quot;2019-03-20T04:29:46.212Z&quot;,
+        &quot;updateAt&quot;: &quot;2019-03-20T04:29:46.212Z&quot;
+    }
+]
+</code></pre>
+<h4 id="3-2-6-">3.2.6 获取热门推荐</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/posts/recommend</td>
+<td style="text-align:center">GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">[
+    {
+        &quot;meta&quot;: {
+            &quot;views&quot;: 0,
+            &quot;likes&quot;: 0,
+            &quot;comments&quot;: 3
+        },
+        &quot;state&quot;: 1,
+        &quot;thumbnail&quot;: null,
+        &quot;_id&quot;: &quot;5c8dcf3f5fcbf1100c27664a&quot;,
+        &quot;title&quot;: &quot;测试文章&quot;,
+        &quot;category&quot;: &quot;5c8dbc2ded67612f8837e0db&quot;,
+        &quot;author&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+        &quot;createAt&quot;: &quot;2019-03-19T04:29:46.212Z&quot;,
+        &quot;updateAt&quot;: &quot;2019-03-19T04:29:46.212Z&quot;
+    }
+]
+</code></pre>
+<h4 id="3-2-7-">3.2.7 获取随机推荐</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/posts/random</td>
+<td style="text-align:center">GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">[
+    {
+        &quot;meta&quot;: {
+            &quot;views&quot;: 0,
+            &quot;likes&quot;: 0,
+            &quot;comments&quot;: 0
+        },
+        &quot;state&quot;: 1,
+        &quot;content&quot;: &quot;测试内容&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;_id&quot;: &quot;5c8dcf3a5fcbf1100c276648&quot;,
+        &quot;title&quot;: &quot;是单独发顺丰&quot;,
+        &quot;category&quot;: &quot;5c8dbc2ded67612f8837e0db&quot;,
+        &quot;author&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+        &quot;createAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;,
+        &quot;updateAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;
+    }
+]
+</code></pre>
+<h3 id="3-3-id-">3.3 根据 id 修改文章</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/posts/:id</td>
+<td>PUT</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>否</td>
+<td>文章标题</td>
+</tr>
+<tr>
+<td>state</td>
+<td>否</td>
+<td>文章状态 [0 草稿] [1 发布]</td>
+</tr>
+<tr>
+<td>content</td>
+<td>否</td>
+<td>文章内容</td>
+</tr>
+<tr>
+<td>category</td>
+<td>否</td>
+<td>文章所属分类</td>
+</tr>
+<tr>
+<td>thumbnail</td>
+<td>否</td>
+<td>文章缩略图</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;meta&quot;: {
+        &quot;views&quot;: 0,
+        &quot;likes&quot;: 0,
+        &quot;comments&quot;: 0
+    },
+    &quot;state&quot;: 1,
+    &quot;content&quot;: &quot;测试内容&quot;,
+    &quot;thumbnail&quot;: null,
+    &quot;_id&quot;: &quot;5c8dcf3a5fcbf1100c276648&quot;,
+    &quot;title&quot;: &quot;是单独发顺丰&quot;,
+    &quot;category&quot;: &quot;5c8dbc2ded67612f8837e0db&quot;,
+    &quot;author&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+    &quot;createAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;,
+    &quot;updateAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;
+}
+</code></pre>
+<h3 id="3-4-id-">3.4 根据 id 删除文章</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/posts/:id</td>
+<td style="text-align:center">DELETE</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;meta&quot;: {
+        &quot;views&quot;: 0,
+        &quot;likes&quot;: 0,
+        &quot;comments&quot;: 0
+    },
+    &quot;state&quot;: 1,
+    &quot;content&quot;: &quot;测试内容&quot;,
+    &quot;thumbnail&quot;: null,
+    &quot;_id&quot;: &quot;5c8dcd3a2346ad087cf957bf&quot;,
+    &quot;title&quot;: &quot;测试文章&quot;,
+    &quot;category&quot;: &quot;5c8dbc2ded67612f8837e0db&quot;,
+    &quot;author&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+    &quot;createAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;,
+    &quot;updateAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;
+}
+</code></pre>
+<h3 id="3-5-">3.5 文章点赞</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/posts/fabulous/:id</td>
+<td>POST</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;meta&quot;: {
+        &quot;views&quot;: 0,
+        &quot;likes&quot;: 4,
+        &quot;comments&quot;: 0
+    },
+    &quot;_id&quot;: &quot;5c8dcf3a5fcbf1100c276648&quot;
+}
+</code></pre>
+<h3 id="3-6-">3.6 文章搜索</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/posts/search/:key</td>
+<td>GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">[
+    {
+        &quot;meta&quot;: {
+            &quot;views&quot;: 0,
+            &quot;likes&quot;: 0,
+            &quot;comments&quot;: 0
+        },
+        &quot;state&quot;: 1,
+        &quot;content&quot;: &quot;测试内容&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;_id&quot;: &quot;5c8dcf3a5fcbf1100c276648&quot;,
+        &quot;title&quot;: &quot;是单独发顺丰&quot;,
+        &quot;category&quot;: &quot;5c8dbc2ded67612f8837e0db&quot;,
+        &quot;author&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+        &quot;createAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;,
+        &quot;updateAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;
+    }
+]
+</code></pre>
+<h2 id="4-">4. 评论管理</h2>
+<h3 id="4-1-">4.1 创建评论</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/comments</td>
+<td>POST</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>content</td>
+<td>是</td>
+<td>评论内容</td>
+</tr>
+<tr>
+<td>post</td>
+<td>是</td>
+<td>评论文章id</td>
+</tr>
+<tr>
+<td>state</td>
+<td>是</td>
+<td>评论状态</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;state&quot;: 0,
+    &quot;_id&quot;: &quot;5c8dee68f4ce931c2c4a0cc3&quot;,
+    &quot;author&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+    &quot;content&quot;: &quot;文章很精彩&quot;,
+    &quot;post&quot;: &quot;5c8dcf3a5fcbf1100c276648&quot;,
+    &quot;createAt&quot;: &quot;2019-03-17T06:51:20.552Z&quot;
+}
+</code></pre>
+<h3 id="4-2-">4.2 获取评论列表</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/comments</td>
+<td>GET</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>page</td>
+<td>否</td>
+<td>页码</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;page&quot;: 1,
+    &quot;size&quot;: 10,
+    &quot;total&quot;: 1,
+    &quot;records&quot;: [
+        {
+            &quot;state&quot;: 1,
+            &quot;_id&quot;: &quot;5c8deda9481a8a3070377305&quot;,
+            &quot;author&quot;: {
+                &quot;role&quot;: &quot;admin&quot;,
+                &quot;avatar&quot;: null,
+                &quot;status&quot;: 1,
+                &quot;_id&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+                &quot;nickName&quot;: &quot;coder&quot;,
+                &quot;email&quot;: &quot;coder@itcast.cn&quot;,
+                &quot;createTime&quot;: &quot;2019-03-17T04:28:55.780Z&quot;
+            },
+            &quot;content&quot;: &quot;文章很精彩&quot;,
+            &quot;post&quot;: {
+                &quot;state&quot;: 1,
+                &quot;thumbnail&quot;: null,
+                &quot;_id&quot;: &quot;5c8dcf3a5fcbf1100c276648&quot;,
+                &quot;title&quot;: &quot;是单独发顺丰&quot;,
+                &quot;category&quot;: &quot;5c8dbc2ded67612f8837e0db&quot;,
+                &quot;author&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+                &quot;createAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;,
+                &quot;updateAt&quot;: &quot;2019-03-17T04:29:46.212Z&quot;
+            },
+            &quot;createAt&quot;: &quot;2019-03-17T06:48:09.954Z&quot;
+        }
+    ],
+    &quot;pages&quot;: 1,
+    &quot;display&quot;: [
+        1
+    ]
+}
+</code></pre>
+<h3 id="4-3-">4.3 更改评论状态</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/comments/:id</td>
+<td>PUT</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>state</td>
+<td>是</td>
+<td>0或1</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;state&quot;: 0,
+    &quot;_id&quot;: &quot;5c8deda9481a8a3070377305&quot;,
+    &quot;author&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+    &quot;content&quot;: &quot;文章很精彩&quot;,
+    &quot;post&quot;: &quot;5c8dcf3a5fcbf1100c276648&quot;,
+    &quot;createAt&quot;: &quot;2019-03-17T06:48:09.954Z&quot;
+}
+</code></pre>
+<h3 id="4-4-">4.4 查询评论数量</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/comments/count</td>
+<td>GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;commentCount&quot;: 1
+}
+</code></pre>
+<h3 id="4-5-">4.5 获取最新评论</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/comments/lasted</td>
+<td>GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">[
+    {
+        &quot;state&quot;: 0,
+        &quot;_id&quot;: &quot;5c8f2e5f5cd7da32e093c506&quot;,
+        &quot;author&quot;: {
+            &quot;role&quot;: &quot;admin&quot;,
+            &quot;avatar&quot;: null,
+            &quot;status&quot;: 1,
+            &quot;_id&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+            &quot;nickName&quot;: &quot;coder&quot;,
+            &quot;email&quot;: &quot;coder@itcast.cn&quot;,
+            &quot;createTime&quot;: &quot;2019-03-17T04:28:55.780Z&quot;
+        },
+        &quot;content&quot;: &quot;万分精彩！！！！&quot;,
+        &quot;post&quot;: &quot;5c8dcf3f5fcbf1100c27664a&quot;,
+        &quot;createAt&quot;: &quot;2019-03-19T05:36:31.187Z&quot;
+    }
+]
+</code></pre>
+<h3 id="4-6-id-">4.6 根据 id 删除评论</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/comments/:id</td>
+<td style="text-align:center">DELETE</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;state&quot;: 0,
+    &quot;_id&quot;: &quot;5c8dee68f4ce931c2c4a0cc3&quot;,
+    &quot;author&quot;: &quot;5c8dcd072346ad087cf957be&quot;,
+    &quot;content&quot;: &quot;文章很精彩&quot;,
+    &quot;post&quot;: &quot;5c8dcf3a5fcbf1100c276648&quot;,
+    &quot;createAt&quot;: &quot;2019-03-17T06:51:20.552Z&quot;
+}
+</code></pre>
+<h2 id="5-">5. 网站设置</h2>
+<h3 id="5-1-">5.1 添加轮播图片</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/slides</td>
+<td>POST</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>是</td>
+<td>轮播图标题</td>
+</tr>
+<tr>
+<td>image</td>
+<td>是</td>
+<td>轮播图片</td>
+</tr>
+<tr>
+<td>link</td>
+<td>否</td>
+<td>图片链接</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;image&quot;: &quot;\\uploads\\upload_569f9bc4b04b4979c98a0264fbcff4de.jpg&quot;,
+    &quot;link&quot;: &quot;#&quot;,
+    &quot;_id&quot;: &quot;5c8e5b459a03f139683b3f53&quot;,
+    &quot;title&quot;: &quot;测试标题&quot;
+}
+</code></pre>
+<h3 id="5-2-">5.2 获取轮播图列表</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/slides</td>
+<td>GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">[
+    {
+        &quot;image&quot;: &quot;null&quot;,
+        &quot;link&quot;: &quot;#&quot;,
+        &quot;_id&quot;: &quot;5c8f1a16b332631efc6fc310&quot;,
+        &quot;title&quot;: &quot;轮播图测试标题&quot;
+    }
+]
+</code></pre>
+<h3 id="5-3-">5.3 删除轮播图片</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">请求地址</th>
+<th style="text-align:center">请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/slides/:id</td>
+<td style="text-align:center">DELETE</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;image&quot;: &quot;/uploads/upload_5c84659382fdbe2cc505ff1c3ef0c134.jpg&quot;,
+    &quot;link&quot;: &quot;#&quot;,
+    &quot;_id&quot;: &quot;5c8e5e33ba71a93314d3c1eb&quot;,
+    &quot;title&quot;: &quot;测试标题&quot;
+}
+</code></pre>
+<h3 id="5-4-">5.4 网站配置</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/settings</td>
+<td>POST</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>是</td>
+<td>站点名称</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>是</td>
+<td>是否开启评论功能</td>
+</tr>
+<tr>
+<td>review</td>
+<td>是</td>
+<td>评论必须经过人工审核</td>
+</tr>
+<tr>
+<td>logo</td>
+<td>否</td>
+<td>网站图标</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;logo&quot;: null,
+    &quot;comment&quot;: true,
+    &quot;review&quot;: true,
+    &quot;_id&quot;: &quot;5c8ed3e7c7f0701c34a63589&quot;,
+    &quot;title&quot;: &quot;测试站点标题&quot;
+}
+</code></pre>
+<h3 id="5-5-">5.5 获取网站配置</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/settings</td>
+<td>GET</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+    &quot;logo&quot;: null,
+    &quot;comment&quot;: true,
+    &quot;review&quot;: true,
+    &quot;_id&quot;: &quot;5c8ed3e7c7f0701c34a63589&quot;,
+    &quot;title&quot;: &quot;测试站点标题&quot;
+}
+</code></pre>
+<h2 id="6-">6. 其他功能</h2>
+<h3 id="-">图片文件上传</h3>
+<table>
+<thead>
+<tr>
+<th>请求地址</th>
+<th>请求方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/upload</td>
+<td>POST</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>avatar</td>
+<td>是</td>
+<td>图片文件</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">[
+    {
+        &quot;avatar&quot;: &quot;\\uploads\\upload_569f9bc4b04b4979c98a0264fbcff4de.jpg&quot;
+    }
+]
+</code></pre>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

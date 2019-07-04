@@ -1,0 +1,10 @@
+1. 使用mongo命令进入mongodb数据库
+2. 使用use admin命令进入到admin数据库
+3. 使用db.auth('root','root')命令登录数据库
+4. 使用use alibaixiu命令切换到alibaixiu数据库
+5. 使用db.createUser({user:'alibaixiu',pwd:'alibaixiu',roles:['readWrite']})创建alibaixiu数据库账号
+6. 使用exit命令退出mongodb数据库
+7. mongoimport -d alibaixiu -c categories --file .\categories.json -u root -p root
+8. mongoimport -d alibaixiu -c posts --file .\posts.json -u alibaixiu -p alibaixiu
+9. mongoimport -d alibaixiu -c comments --file .\comments.json -u alibaixiu -p alibaixiu
+
