@@ -29,6 +29,8 @@ app.use(formidableMiddleware({
 }));
 
 // 数据库连接
+// mongodb://alibaixiu:alibaixiu@localhost:27017/alibaixiu
+// mongodb://itcast:itcast@192.168.13.201:27017/alibaixiu
 mongoose.connect('mongodb://alibaixiu:alibaixiu@localhost:27017/alibaixiu', { useNewUrlParser: true, useCreateIndex: true})
 	.then(() => console.log('数据库连接成功'))
 	.catch(() => console.log('数据库连接失败'));
